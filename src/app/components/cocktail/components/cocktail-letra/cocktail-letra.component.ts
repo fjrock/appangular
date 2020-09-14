@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CocktailService } from '../../../../services/cocktail.service'
-import { Drink } from '../../../../models/drink'
+import { Drink } from '../../../../models/Drink'
 import { take } from 'rxjs/operators';
 import { ActivatedRoute } from '@angular/router';
 
@@ -24,12 +24,10 @@ export class CocktailLetraComponent implements OnInit {
 
 
   public getCocktailByLetter(letter: any){
-   
-    console.log(letter);
+
     this.cocktailService.findByLetter(letter).pipe(take(1)).subscribe(
       data=>{
         this.cocktail = data.drinks;
-        console.log(this.cocktail)
       }
       );
     

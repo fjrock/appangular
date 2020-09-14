@@ -18,7 +18,6 @@ public findDetailCocktail(id: any){
 }
 
 public findByLetter(letter: any) {
-  console.log(letter+' estroy en servicio');
   return this.http.get<any>(`${environment.API_COCKTAIL}/search.php?f=${letter}`);
 }
 

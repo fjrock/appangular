@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CocktailService } from '../../../../services/cocktail.service'
 import { take } from 'rxjs/operators';
-import { Drink } from '../../../../models/drink'
+import { Drink } from '../../../../models/Drink'
 
 @Component({
   selector: 'app-cocktail-detalle',
@@ -25,7 +25,6 @@ export class CocktailDetalleRandomComponent implements OnInit {
     this.cocktailService.findDetailCocktail(id).pipe(take(1)).subscribe(
       data=>{
         this.cocktail = data.drinks[0];
-        console.log(this.cocktail)
       }
       );
     }
