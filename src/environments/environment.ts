@@ -8,7 +8,7 @@ export const environment = {
   API_SISMO: 'https://api.gael.cl/general/public/sismos',
   API_MONEDAS: 'https://api.gael.cl/general/public/monedas',
   API_FERIADOS: 'https://www.feriadosapp.com/api/holidays.json',
-  API_BAR: 'https://www.thecocktaildb.com/api/json/v1/1/'
+  API_COCKTAIL: 'https://www.thecocktaildb.com/api/json/v1/1'
 };
 
 /*

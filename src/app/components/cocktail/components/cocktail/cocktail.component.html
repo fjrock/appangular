@@ -1,0 +1,5 @@
+<p></p>
+<br>
+<button type="button"  value="{{ cocktail?.idDrink }}" (click)="getCocktailById(cocktail?.idDrink)">Probar nuevo trago ¡¡¡</button>
+
+<input [(ngModel)]="searchLetter" (keyup.enter)="getCocktailByLetter()" maxlength="1" style="width: 300px" class="mr5" type="text" placeholder="Buscar...">

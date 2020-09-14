@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { LayoutComponent } from './components/layout/layout.component';
 import { PageNotFoundModule } from './components/page-not-found/page-not-found.module';
-import { MonedasModule} from './components/monedas/components/monedas.module'
+import { CocktailModule} from './components/cocktail/cocktail.module';
 
 
 @NgModule({
@@ -22,7 +22,7 @@ import { MonedasModule} from './components/monedas/components/monedas.module'
     SharedModule,
     FormsModule,
     PageNotFoundModule,
-    MonedasModule
+    CocktailModule
 
   ],
   providers: [],

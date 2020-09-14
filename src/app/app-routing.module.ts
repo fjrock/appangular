@@ -19,17 +19,9 @@ const routes: Routes = [
         loadChildren: () => import('./components/home/home.module').then(m => m.HomeModule)
       },
       {
-        path: 'feriados',
-        loadChildren: () => import('./components/feriados/feriados.module').then(m => m.FeriadosModule)
-      },
-      {
-        path: 'monedas',
-        loadChildren: () => import('./components/monedas/components/monedas.module').then(m => m.MonedasModule)
-      },
-      {
-        path: 'sismos',
-        loadChildren: () => import('./components/sismos/sismos.module').then(m => m.SismosModule)
-      }
+        path: 'cocktail',
+        loadChildren: () => import('./components/cocktail/cocktail.module').then(m => m.CocktailModule)
+      }     
     ]
   }
 ];
