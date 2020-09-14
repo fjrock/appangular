@@ -4,10 +4,6 @@
 
 export const environment = {
   production: false,
-  API_TIEMPO: 'https://api.gael.cl/general/public/clima',
-  API_SISMO: 'https://api.gael.cl/general/public/sismos',
-  API_MONEDAS: 'https://api.gael.cl/general/public/monedas',
-  API_FERIADOS: 'https://www.feriadosapp.com/api/holidays.json',
   API_COCKTAIL: 'https://www.thecocktaildb.com/api/json/v1/1'
 };
 
