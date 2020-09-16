@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { LayoutComponent } from './components/layout/layout.component';
 import { PageNotFoundModule } from './components/page-not-found/page-not-found.module';
 import { CocktailModule} from './components/cocktail/cocktail.module';
+import { MaterialModule } from './components/material/material.module';
 
 
 @NgModule({
@@ -19,10 +20,10 @@ import { CocktailModule} from './components/cocktail/cocktail.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    SharedModule,
     FormsModule,
-    PageNotFoundModule,
-    CocktailModule
+    SharedModule,
+    CocktailModule,
+    MaterialModule
 
   ],
   providers: [],

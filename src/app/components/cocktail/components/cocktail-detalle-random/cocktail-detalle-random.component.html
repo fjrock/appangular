@@ -1,6 +1,32 @@
-<p>cocktail-detalle works!</p>
 
-<p>{{ cocktail?.strDrink }}</p>
-<p>{{ cocktail?.idDrink }} </p>
-<p>{{ cocktail?.strDrinkThumb }} </p>
-<p>{{ cocktail?.strInstructions }} </p>
+<div class="container">
+    <app-header></app-header>
+<mat-card class="home-card">
+    <mat-card-content>
+        <div class="home-container">
+            <img mat-card-image src="{{cocktail?.strDrinkThumb }}">
+            <div class="content">            
+             
+                <div class="content-container">
+                    
+                    <div class="content-title">
+                        <h1>{{ cocktail?.strDrink }}</h1>
+                    </div>
+                    <div class="content-description">
+                        {{ cocktail?.strInstructions }}         
+                    </div>
+                <mat-card-content>   
+                    <div class="content-ingredients">
+                        <br>
+                       Ingredients : {{ ingredients }} 
+                      
+                    </div>
+                 </mat-card-content>
+                </div>
+
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+</div>
+<app-footer></app-footer>
