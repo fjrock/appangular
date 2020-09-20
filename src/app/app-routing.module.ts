@@ -20,7 +20,11 @@ const routes: Routes = [
       {
         path: 'cocktail',
         loadChildren: () => import('./components/cocktail/cocktail.module').then(m => m.CocktailModule)
-      }   
+      },
+      {
+        path: 'music',
+        loadChildren: () => import('./components/music/music.module').then(m => m.MusicModule)
+      }    
     ]
   }
 ];

@@ -6,9 +6,9 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { LayoutComponent } from './components/layout/layout.component';
-import { PageNotFoundModule } from './components/page-not-found/page-not-found.module';
 import { CocktailModule} from './components/cocktail/cocktail.module';
 import { MaterialModule } from './components/material/material.module';
+import { MusicModule } from './components/music/music.module';
 
 
 @NgModule({
@@ -23,6 +23,7 @@ import { MaterialModule } from './components/material/material.module';
     FormsModule,
     SharedModule,
     CocktailModule,
+    MusicModule,
     MaterialModule
 
   ],

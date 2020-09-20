@@ -4,13 +4,16 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent} from './/header/header.component'
 import { FooterComponent} from './/footer/footer.component'
 import { MaterialModule} from '../../app/components/material/material.module'
-
+import { PageNotFoundComponent} from '../shared/page-not-found/page-not-found/page-not-found.component'
 
 
 @NgModule({
   declarations: [ 
     HeaderComponent,
-    FooterComponent],
+    FooterComponent,
+    PageNotFoundComponent
+  ],
+
   imports: [
     CommonModule,
     RouterModule,
@@ -18,6 +21,7 @@ import { MaterialModule} from '../../app/components/material/material.module'
   ],
   exports:[ 
     HeaderComponent,
-    FooterComponent]
+    FooterComponent,
+    PageNotFoundComponent]
 })
 export class SharedModule { }

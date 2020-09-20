@@ -6,8 +6,6 @@ import { CocktailComponent } from  './components/cocktail/cocktail.component'
 import { CocktailRoutingModule } from './cocktail-routing.module'
 import { CocktailDetalleRandomComponent } from './components/cocktail-detalle-random/cocktail-detalle-random.component'
 import { CocktailLetraComponent} from './components/cocktail-letra/cocktail-letra.component'
-import { PageNotFoundComponent } from '../page-not-found/page-not-found/page-not-found.component';
-import { materialize } from 'rxjs/operators';
 import { MaterialModule } from '../material/material.module';
 
 
@@ -15,8 +13,7 @@ import { MaterialModule } from '../material/material.module';
   declarations: [
     CocktailComponent,
     CocktailDetalleRandomComponent,
-    CocktailLetraComponent,
-    PageNotFoundComponent
+    CocktailLetraComponent
   ],
   imports: [
     CommonModule,
