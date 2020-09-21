@@ -24,7 +24,7 @@ import { MusicModule } from './components/music/music.module';
     SharedModule,
     CocktailModule,
     MusicModule,
-    MaterialModule
+    MaterialModule,
 
   ],
   providers: [],

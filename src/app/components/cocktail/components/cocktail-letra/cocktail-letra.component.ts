@@ -23,7 +23,7 @@ export class CocktailLetraComponent implements OnInit {
 
 
 
-  public getCocktailByLetter(letter: any){
+  getCocktailByLetter(letter: any){
 
     this.cocktailService.findByLetter(letter).pipe(take(1)).subscribe(
       data=>{
