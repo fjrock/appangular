@@ -12,7 +12,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressBarModule} from '@angular/material/progress-bar'
 import { MatIconModule} from '@angular/material/icon'
-import { MatPaginatorModule } from '@angular/material';
+import { MatProgressSpinnerModule } from '@angular/material';
 
 
 
@@ -31,7 +31,8 @@ import { MatPaginatorModule } from '@angular/material';
     MatSelectModule,
     MatSnackBarModule,
     MatProgressBarModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   exports: [
     MatToolbarModule,
@@ -46,8 +47,7 @@ import { MatPaginatorModule } from '@angular/material';
     MatSnackBarModule,
     MatProgressBarModule,
     MatIconModule,
-    MatPaginatorModule,
-
+    MatProgressSpinnerModule,
   ]
 })
 export class MaterialModule { }

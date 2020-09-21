@@ -1,21 +1,29 @@
-<p></p>
-<br>
-<button type="button"  value="{{ cocktail?.idDrink }}" (click)="getCocktailById(cocktail?.idDrink)">Probar nuevo trago ¡¡¡</button>
+<div class="container">
 
-<input [(ngModel)]="searchLetter" (input)="getCocktailByLetterCocktail()" maxlength="1" style="width: 300px" class="mr5" type="text" placeholder="Buscar...">
+    <div>
+        <button type="button"  value="{{ cocktail?.idDrink }}" (click)="getCocktailById(cocktail?.idDrink)">Probar nuevo trago ¡¡¡</button>
+    </div>
 
-<div *ngFor='let c of cocktailLetter'>
-    
-    <mat-card class="example-card">
-        <mat-card-header>
-        <mat-icon><img mat-card-image src="{{c?.strDrinkThumb }}/preview"></mat-icon>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>{{ c?.strDrink }}</mat-card-title>
-        </mat-card-header>
-    </mat-card>
+    <div>
+        <input [(ngModel)]="searchLetter" (input)="getCocktailByLetterCocktail()" maxlength="1" style="width: 300px" class="mr5" type="text" placeholder="Buscar...">
+    </div>
 
-    <button type="button"  value="{{ c?.idDrink }}" (click)="getCocktailById(c?.idDrink)">GO¡¡¡</button>
-<br>
+    <div class="align-content-center"> 
+        <mat-card *ngFor="let c of cocktailLetter " style="margin-top:10px;">
+            <mat-card-header>
+            <mat-icon><img mat-card-image src="{{c?.strDrinkThumb }}/preview"></mat-icon>
+            </mat-card-header>
+            <mat-card-content>
+                <div mat-card-avatar></div>
+                <mat-card-title>{{ c?.strDrink }}</mat-card-title>
+            </mat-card-content>
+            <mat-card-footer>
+                <button type="button"  value="{{ c?.idDrink }}" (click)="getCocktailById(c?.idDrink)">GO¡¡¡</button>
+            </mat-card-footer>
+            
+        </mat-card>
 
-    
+    </div>
+
 </div>
+

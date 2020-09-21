@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from "@angular/router";
 import { take } from 'rxjs/operators';
 import { CocktailService } from '../../../../services/cocktail.service'
 import { Drink } from '../../../../models/Drink'
 import {Subject, Subscription} from 'rxjs';
+import { MatPaginator } from '@angular/material';
 
 @Component({
   selector: 'app-cocktail',
@@ -15,13 +16,14 @@ export class CocktailComponent implements OnInit {
   cocktail: Drink
   cocktailLetter: Drink
   searchLetter = null;
-  letter$ = new Subject<String>();
-  subscriptionSearchData: Subscription;
-  componentDestroyed: Subject<boolean> = new Subject();
-  
+  pageSize: number;
+  page: number;
 
   constructor(private router: Router,
               private cocktailService: CocktailService) { 
+
+  this.page = 1;
+  this.pageSize = 8;
   
               }
 
@@ -39,10 +41,6 @@ export class CocktailComponent implements OnInit {
 
   getCocktailById(id: any) {
     this.router.navigate([`detalle/${id}`]);
-  }
-
-  getCocktailByLetter(){
-    this.router.navigate([`detalle-letra/${this.searchLetter}`]);
   }
 
   getCocktailByLetterCocktail(){
