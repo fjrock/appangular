@@ -9,6 +9,7 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { CocktailModule} from './components/cocktail/cocktail.module';
 import { MaterialModule } from './components/material/material.module';
 import { MusicModule } from './components/music/music.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { MusicModule } from './components/music/music.module';
     CocktailModule,
     MusicModule,
     MaterialModule,
+    BrowserAnimationsModule
 
   ],
   providers: [],

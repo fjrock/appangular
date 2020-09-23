@@ -1,32 +1,25 @@
+<div>
 <app-header></app-header>
-<div class="container">
-    
-<mat-card class="home-card">
-    <mat-card-content>
-        <div class="home-container">
-            <img mat-card-image src="{{cocktail?.strDrinkThumb }}">
-            <div class="content">            
-             
-                <div class="content-container">
-                    
-                    <div class="content-title">
-                        <h1>{{ cocktail?.strDrink }}</h1>
-                    </div>
-                    <div class="content-description">
-                        {{ cocktail?.strInstructions }}         
-                    </div>
-                <mat-card-content>   
-                    <div class="content-ingredients">
-                        <br>
-                       Ingredients : {{ ingredients }} 
-                      
-                    </div>
-                 </mat-card-content>
-                </div>
-
-            </div>
-        </div>
+<div class="principal"> 
+<mat-card class="mat-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>Drink ¡¡¡</mat-card-title>
+      <mat-card-subtitle>{{ cocktail?.strDrink }}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{cocktail?.strDrinkThumb }}" alt="Photo of a Shiba Inu">
+    <mat-card-content class="mat-card.content">
+      <p>
+        {{ cocktail?.strInstructions }} 
+        <br>
+        Ingredients : {{ ingredients }}
+      </p>
     </mat-card-content>
-</mat-card>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
 <app-footer></app-footer>
+<div>

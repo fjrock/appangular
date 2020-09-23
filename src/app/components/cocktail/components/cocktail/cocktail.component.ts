@@ -1,10 +1,10 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, ChangeDetectorRef} from '@angular/core';
 import { Router } from "@angular/router";
 import { take } from 'rxjs/operators';
 import { CocktailService } from '../../../../services/cocktail.service'
 import { Drink } from '../../../../models/Drink'
-import {Subject, Subscription} from 'rxjs';
-import { MatPaginator } from '@angular/material';
+import {Subject, Subscription,Observable } from 'rxjs';
+import { MatTableDataSource, MatPaginator } from '@angular/material';
 
 @Component({
   selector: 'app-cocktail',
@@ -13,21 +13,20 @@ import { MatPaginator } from '@angular/material';
 })
 export class CocktailComponent implements OnInit {
 
-  cocktail: Drink
+  cocktail: Drink;
   cocktailLetter: Drink
   searchLetter = null;
-  pageSize: number;
-  page: number;
+  random: String
+
 
   constructor(private router: Router,
               private cocktailService: CocktailService) { 
 
-  this.page = 1;
-  this.pageSize = 8;
   
               }
 
   ngOnInit() {
+
     this.cocktailService.getRandom().pipe(take(1)).subscribe(
       (data) => { 
         this.cocktail =data.drinks[0];
@@ -37,6 +36,9 @@ export class CocktailComponent implements OnInit {
       }
     );
 
+    this.random = String.fromCharCode(65+Math.floor(Math.random() * 26))
+    this.getCocktailByLetterCocktailInit(this.random);
+
   }
 
   getCocktailById(id: any) {
@@ -45,6 +47,7 @@ export class CocktailComponent implements OnInit {
 
   getCocktailByLetterCocktail(){
     
+    console.log(this.random)
     if(this.searchLetter!=''){
 
     this.cocktailService.findByLetter(this.searchLetter).pipe(take(1)).subscribe(
@@ -56,5 +59,18 @@ export class CocktailComponent implements OnInit {
 
   }
   
+  getCocktailByLetterCocktailInit(random: String){
+    
+    console.log(this.random)
+  
+
+    this.cocktailService.findByLetter(this.random).pipe(take(1)).subscribe(
+      data=>{
+        this.cocktailLetter = data.drinks;
+      }
+      );
+    
+
+  }
 
 }
