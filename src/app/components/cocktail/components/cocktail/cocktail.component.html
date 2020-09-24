@@ -8,14 +8,13 @@
         <input [(ngModel)]="searchLetter" (input)="getCocktailByLetterCocktail()" maxlength="1" style="width: 300px" class="mr5" type="text" placeholder="Buscar...">
     </div>
 
-    <div class="align-content-center"> 
+    <div  *ngFor="let c of cocktailLetter"> 
 
-        <mat-card *ngFor="let c of cocktailLetter" style="margin-top:10px;">
+        <mat-card >
             <mat-card-header>
             <mat-icon><img mat-card-image src="{{c?.strDrinkThumb }}/preview"></mat-icon>
             </mat-card-header>
             <mat-card-content>
-                <div mat-card-avatar></div>
                 <mat-card-title>{{ c?.strDrink }}</mat-card-title>
             </mat-card-content>
             <mat-card-footer>

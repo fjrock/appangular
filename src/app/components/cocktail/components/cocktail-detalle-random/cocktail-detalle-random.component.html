@@ -3,17 +3,18 @@
 <div class="principal"> 
 <mat-card class="mat-card">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Drink ¡¡¡</mat-card-title>
-      <mat-card-subtitle>{{ cocktail?.strDrink }}</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image src="{{cocktail?.strDrinkThumb }}" alt="Photo of a Shiba Inu">
-    <mat-card-content class="mat-card.content">
-      <p>
-        {{ cocktail?.strInstructions }} 
+    <img mat-card-image src="{{cocktail?.strDrinkThumb }}" class="mat-card-image">
+    <mat-card-content class="mat-card-content">
+      <p class="p">
+        {{ cocktail?.strDrink }}
+      </p>
+        <br>
         <br>
         Ingredients : {{ ingredients }}
-      </p>
+        <br>
+        <br>
+        {{ cocktail?.strInstructions }}  
     </mat-card-content>
     <mat-card-actions>
       <button mat-button>LIKE</button>
