@@ -1,10 +1,9 @@
-import { Component, OnInit, OnDestroy, ViewChild, ChangeDetectorRef} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { Router } from "@angular/router";
-import { take } from 'rxjs/operators';
+import { map, take, tap } from 'rxjs/operators';
 import { CocktailService } from '../../../../services/cocktail.service'
 import { Drink } from '../../../../models/Drink'
-import {Subject, Subscription,Observable } from 'rxjs';
-import { MatTableDataSource, MatPaginator } from '@angular/material';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-cocktail',
@@ -13,10 +12,11 @@ import { MatTableDataSource, MatPaginator } from '@angular/material';
 })
 export class CocktailComponent implements OnInit {
 
-  cocktail: Drink;
+  cocktail: any;
   cocktailLetter: Drink
   searchLetter = null;
   random: String
+  asyncDrink$: Observable<Drink>;
 
 
   constructor(private router: Router,
@@ -27,13 +27,23 @@ export class CocktailComponent implements OnInit {
 
   ngOnInit() {
 
-    this.cocktailService.getRandom().pipe(take(1)).subscribe(
+    /*this.asyncDrink = this.cocktailService.getRandom().pipe(take(1)).subscribe(
       (data) => { 
         this.cocktail =data.drinks[0];
       },
       (error) => {
         console.error(error);
       }
+    );*/
+
+    this.asyncDrink$ = this.cocktailService.getRandom().pipe(
+      tap(response => {
+        //this.totalRecords = response.info.count;
+        //this.loading = false;
+        this.cocktail = response.drinks[0]
+        //console.log(this.cocktail)
+      }),
+      map (response => response.drinks[0])
     );
 
     this.random = String.fromCharCode(65+Math.floor(Math.random() * 26))

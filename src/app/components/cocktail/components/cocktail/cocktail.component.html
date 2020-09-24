@@ -1,28 +1,45 @@
-<div class="container">
 
-    <div>
-        <button type="button"  value="{{ cocktail?.idDrink }}" (click)="getCocktailById(cocktail?.idDrink)">Probar nuevo trago ¡¡¡</button>
-    </div>
+    <mat-toolbar>
+        <div *ngIf="asyncDrink$ | async as drinks"> 
 
-    <div>
+ 
+      <button type="button"  value="{{drinks.idDrink}}" (click)="getCocktailById(drinks.idDrink)">Probar nuevo trago ¡¡¡</button>
+   </div>
+    </mat-toolbar>
+
+    <mat-toolbar>
         <input [(ngModel)]="searchLetter" (input)="getCocktailByLetterCocktail()" maxlength="1" style="width: 300px" class="mr5" type="text" placeholder="Buscar...">
-    </div>
+    </mat-toolbar>
 
-    <div  *ngFor="let c of cocktailLetter"> 
+    
 
-        <mat-card >
-            <mat-card-header>
-            <mat-icon><img mat-card-image src="{{c?.strDrinkThumb }}/preview"></mat-icon>
-            </mat-card-header>
-            <mat-card-content>
-                <mat-card-title>{{ c?.strDrink }}</mat-card-title>
-            </mat-card-content>
-            <mat-card-footer>
-                <button type="button"  value="{{ c?.idDrink }}" (click)="getCocktailById(c?.idDrink)">GO¡¡¡</button>
-            </mat-card-footer>
+
+        
+        
+        <div >
+            <cdk-virtual-scroll-viewport orientation="horizontal"itemSize="100">
+              <div *cdkVirtualFor="let e of cocktailLetter" class="example-item-detail">
+
+                <mat-card >
+      
+                    <mat-card-header>
+                    <mat-icon><img mat-card-image src="{{e?.strDrinkThumb }}/preview"></mat-icon>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <mat-card-title>{{ e?.strDrink }}</mat-card-title>
+                    </mat-card-content>
+                    <mat-card-footer>
+                        <button type="button"  value="{{ e?.idDrink }}" (click)="getCocktailById(e?.idDrink)">GO¡¡¡</button>
+                    </mat-card-footer>
             
-        </mat-card>
-    </div>
+                </mat-card>                
+              </div>
+            </cdk-virtual-scroll-viewport>
+          </div>
 
-</div>
+          
+
+ 
+
+
 
