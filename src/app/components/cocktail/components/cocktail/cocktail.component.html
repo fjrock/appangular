@@ -1,41 +1,31 @@
 
     <mat-toolbar>
-        <div *ngIf="asyncDrink$ | async as drinks"> 
-
- 
+     <div *ngIf="asyncDrink$ | async as drinks"> 
       <button type="button"  value="{{drinks.idDrink}}" (click)="getCocktailById(drinks.idDrink)">Probar nuevo trago ¡¡¡</button>
-   </div>
+    </div>
+    <div>
+      <input [(ngModel)]="searchLetter" (input)="getCocktailByLetterCocktail()" maxlength="1" style="width: 300px" class="mr5" type="text" placeholder="Buscar...">
+    </div>
     </mat-toolbar>
-
-    <mat-toolbar>
-        <input [(ngModel)]="searchLetter" (input)="getCocktailByLetterCocktail()" maxlength="1" style="width: 300px" class="mr5" type="text" placeholder="Buscar...">
-    </mat-toolbar>
-
-    
-
-
-        
-        
         <div >
-            <cdk-virtual-scroll-viewport orientation="horizontal"itemSize="100">
-              <div *cdkVirtualFor="let random of asyncRandom$ | async" class="example-item-detail">
+            <div class="container">
+              <cdk-virtual-scroll-viewport itemSize="200" class="viewport">
+                <mat-card *cdkVirtualFor="let random of asyncRandom$ | async">
+                  <mat-card-header>
+                  </mat-card-header>
+                  <mat-card-title>Name: {{random.strDrink}}</mat-card-title>
+                  <mat-card-content>
+                    Category: {{random.strCategory}}
+                  <br>
+                  Alcoholic: {{random.strAlcoholic}}
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button type="button"  value="{{ random.idDrink }}" (click)="getCocktailById(random.idDrink)">GO¡¡¡</button>
+                  </mat-card-actions>
+                </mat-card>
 
-                <mat-card >
-      
-                    <mat-card-header>
-                    <mat-icon><img mat-card-image src="{{random.strDrinkThumb }}/preview"></mat-icon>
-                    </mat-card-header>
-                    <mat-card-content>
-                        <mat-card-title>{{ random.strDrink }}</mat-card-title>
-                    </mat-card-content>
-                    <mat-card-footer>
-                        <button type="button"  value="{{ random.idDrink }}" (click)="getCocktailById(random.idDrink)">GO¡¡¡</button>
-                    </mat-card-footer>
-            
-                </mat-card>                
-              </div>
-            </cdk-virtual-scroll-viewport>
-          </div>
+              </cdk-virtual-scroll-viewport>
+            </div>
 
           
 

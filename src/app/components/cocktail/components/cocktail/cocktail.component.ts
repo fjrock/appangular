@@ -49,11 +49,14 @@ export class CocktailComponent implements OnInit {
     console.log(this.random)
     if(this.searchLetter!=''){
 
-    this.cocktailService.findByLetter(this.searchLetter).pipe(take(1)).subscribe(
-      data=>{
-        this.cocktailLetter = data.drinks;
-      }
-      );
+      this.asyncRandom$ = this.cocktailService.findByLetter(this.searchLetter).pipe(tap(response => {
+        this.cocktailLetter = response.drinks
+      }),
+      map (response => response.drinks)
+     );
+
+      
+
     }
 
   }
