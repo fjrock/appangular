@@ -18,18 +18,18 @@
         
         <div >
             <cdk-virtual-scroll-viewport orientation="horizontal"itemSize="100">
-              <div *cdkVirtualFor="let e of cocktailLetter" class="example-item-detail">
+              <div *cdkVirtualFor="let random of asyncRandom$ | async" class="example-item-detail">
 
                 <mat-card >
       
                     <mat-card-header>
-                    <mat-icon><img mat-card-image src="{{e?.strDrinkThumb }}/preview"></mat-icon>
+                    <mat-icon><img mat-card-image src="{{random.strDrinkThumb }}/preview"></mat-icon>
                     </mat-card-header>
                     <mat-card-content>
-                        <mat-card-title>{{ e?.strDrink }}</mat-card-title>
+                        <mat-card-title>{{ random.strDrink }}</mat-card-title>
                     </mat-card-content>
                     <mat-card-footer>
-                        <button type="button"  value="{{ e?.idDrink }}" (click)="getCocktailById(e?.idDrink)">GO¡¡¡</button>
+                        <button type="button"  value="{{ random.idDrink }}" (click)="getCocktailById(random.idDrink)">GO¡¡¡</button>
                     </mat-card-footer>
             
                 </mat-card>                

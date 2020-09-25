@@ -17,6 +17,7 @@ export class CocktailComponent implements OnInit {
   searchLetter = null;
   random: String
   asyncDrink$: Observable<Drink>;
+  asyncRandom$: Observable<any>;
 
 
   constructor(private router: Router,
@@ -27,21 +28,9 @@ export class CocktailComponent implements OnInit {
 
   ngOnInit() {
 
-    /*this.asyncDrink = this.cocktailService.getRandom().pipe(take(1)).subscribe(
-      (data) => { 
-        this.cocktail =data.drinks[0];
-      },
-      (error) => {
-        console.error(error);
-      }
-    );*/
-
     this.asyncDrink$ = this.cocktailService.getRandom().pipe(
       tap(response => {
-        //this.totalRecords = response.info.count;
-        //this.loading = false;
         this.cocktail = response.drinks[0]
-        //console.log(this.cocktail)
       }),
       map (response => response.drinks[0])
     );
@@ -70,17 +59,13 @@ export class CocktailComponent implements OnInit {
   }
   
   getCocktailByLetterCocktailInit(random: String){
-    
-    console.log(this.random)
-  
 
-    this.cocktailService.findByLetter(this.random).pipe(take(1)).subscribe(
-      data=>{
-        this.cocktailLetter = data.drinks;
-      }
-      );
-    
-
+    this.asyncRandom$ = this.cocktailService.findByLetter(this.random).pipe(tap(response => {
+      this.cocktailLetter = response.drinks
+    }),
+    map (response => response.drinks)
+   );
+      
   }
 
 }
