@@ -1,13 +1,16 @@
 
-    <mat-toolbar>
-     <div *ngIf="asyncDrink$ | async as drinks"> 
-      <button type="button"  value="{{drinks.idDrink}}" (click)="getCocktailById(drinks.idDrink)">Probar nuevo trago ¡¡¡</button>
+<mat-toolbar>
+   <div class="row">
+     <div *ngIf="asyncDrink$ | async as drinks" class="col"> 
+      <button mat-button color="accent" value="{{drinks.idDrink}}" (click)="getCocktailById(drinks.idDrink)">
+       <mat-icon>???</mat-icon>
+      </button>
     </div>
-    <div>
-      <input [(ngModel)]="searchLetter" (input)="getCocktailByLetterCocktail()" maxlength="1" style="width: 300px" class="mr5" type="text" placeholder="Buscar...">
+    <div class="col">
+      <input matInput [(ngModel)]="searchLetter" (input)="getCocktailByLetterCocktail()" maxlength="1" style="width: 300px" class="mr5" type="text" placeholder="Buscar por letra inicial...">
     </div>
-    </mat-toolbar>
-        <div >
+  </div>
+</mat-toolbar>
             <div class="container">
               <cdk-virtual-scroll-viewport itemSize="200" class="viewport">
                 <mat-card *cdkVirtualFor="let random of asyncRandom$ | async">
@@ -23,7 +26,6 @@
                     <button type="button"  value="{{ random.idDrink }}" (click)="getCocktailById(random.idDrink)">GO¡¡¡</button>
                   </mat-card-actions>
                 </mat-card>
-
               </cdk-virtual-scroll-viewport>
             </div>
 
