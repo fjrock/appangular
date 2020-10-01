@@ -19,14 +19,15 @@
   <div class="card-header">
     Name: {{random.strDrink}}
   </div>
-  <div class="card-body ">
+  <div class="card-body">
     <p class="card-text">
       Category: {{random.strCategory}}
       <br>
       Alcoholic: {{random.strAlcoholic}} 
     </p>
-    <button type="button" class="btn btn-primary" value="{{ random.idDrink }}" (click)="getCocktailById(random.idDrink)">GO TO {{random.strDrink}}¡¡¡</button>
  </div>
+ <button type="button" class="btn btn-primary" value="{{ random.idDrink }}" (click)="getCocktailById(random.idDrink)">GO TO {{random.strDrink}}¡¡¡</button>
+ 
 </div>
 
 </ng-container>
