@@ -29,60 +29,63 @@ export class CocktailDetalleRandomComponent implements OnInit {
     this.asyncDrink$ = this.cocktailService.findDetailCocktail(id).pipe(
       tap(response => {
         this.cocktail = response.drinks
-        this.concatenar(this.cocktail);
+        this.concatenar(this.cocktail)
       }),
       map (response => response.drinks)
     );
+
 
     }
 
     concatenar(concatenar:any){
       this.ingredients='';
+
       
-      if(concatenar.strIngredient1!=null  ){
-        this.ingredients=this.ingredients+concatenar.strIngredient1;
+      
+      if(concatenar[0].strIngredient1!=null  ){
+        this.ingredients=this.ingredients+concatenar[0].strIngredient1;
       }
-      if(concatenar.strIngredient2!=null){
-        this.ingredients=this.ingredients+', '+concatenar.strIngredient2;
+      if(concatenar[0].strIngredient2!=null){
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient2;
       }
-      if(concatenar.strIngredient3!=null){
-        this.ingredients=this.ingredients+', '+concatenar.strIngredient3;
+      if(concatenar[0].strIngredient3!=null){
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient3;
       }
-      if(concatenar.strIngredient4!=null){
-        this.ingredients=this.ingredients+', '+concatenar.strIngredient4;
+      if(concatenar[0].strIngredient4!=null){
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient4;
       }
-      if(concatenar.strIngredient5!=null){
-        this.ingredients=this.ingredients+', '+concatenar.strIngredient5;
+      if(concatenar[0].strIngredient5!=null){
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient5;
       }
-      if(concatenar.strIngredient6!=null){
-        this.ingredients=this.ingredients+', '+concatenar.strIngredient6;
+      if(concatenar[0].strIngredient6!=null){
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient6;
       }
-      if(concatenar.strIngredient7!=null){
-        this.ingredients=this.ingredients+', '+concatenar.strIngredient7;
+      if(concatenar[0].strIngredient7!=null){
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient7;
       }
-      if(concatenar.strIngredient8!=null){
-        this.ingredients=this.ingredients+', '+concatenar.strIngredient8;
+      if(concatenar[0].strIngredient8!=null){
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient8;
       }
-      if(concatenar.strIngredient9!=null){
-        this.ingredients=this.ingredients+', '+concatenar.strIngredient9;
+      if(concatenar[0].strIngredient9!=null){
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient9;
       }
-      if(concatenar.strIngredient10!=null){
-        this.ingredients=this.ingredients+', '+concatenar.strIngredient10;
+      if(concatenar[0].strIngredient10!=null){
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient10;
       }
-      if(concatenar.strIngredient11!=null){
-        this.ingredients=this.ingredients+', '+concatenar.strIngredient11;
+      if(concatenar[0].strIngredient11!=null){
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient11;
       }
-      if(concatenar.strIngredient12!=null){
-        this.ingredients=this.ingredients+', '+concatenar.strIngredient12;
+      if(concatenar[0].strIngredient12!=null){
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient12;
       }
-      if(concatenar.strIngredient13!=null){
-        this.ingredients=this.ingredients+', '+concatenar.strIngredient13;
+      if(concatenar[0].strIngredient13!=null){
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient13;
       }
-      if(concatenar.strIngredient14!=null){
-        this.ingredients=this.ingredients+', '+concatenar.strIngredient14;
+      if(concatenar[0].strIngredient14!=null){
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient14;
       }
       if(concatenar.strIngredient15!=null){
-        this.ingredients=this.ingredients+', '+concatenar.strIngredient15;
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient15;
       }
       
       
