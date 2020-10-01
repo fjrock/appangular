@@ -1,10 +1,9 @@
 
-
 <mat-toolbar>
    <div class="row">
      <div *ngIf="asyncDrink$ | async as drinks" class="col"> 
       <button class="btn btn-primary"  value="{{drinks.idDrink}}" (click)="getCocktailById(drinks.idDrink)">
-       <i class="fa fa-beer fa-lg"></i>
+       <i class="fa fa-random fa-lg"></i>
       </button>
     </div>
     <div class="col">
@@ -13,12 +12,13 @@
   </div>
 </mat-toolbar>
 
-<ng-container *ngFor="let random of asyncRandom$ | async" >
-
-<div class="card align-items-center d-flex justify-content-center">
-  <img class="card-img-top" src="{{ random.strDrinkThumb }}/preview" alt="Card image">
+<ng-container *ngFor="let random of asyncRandom$ | async">
+  <div class="card">
+  <img src="{{ random.strDrinkThumb }}/preview">
   <div class="card-header">
-    Name: {{random.strDrink}}
+    <p class="card-text">
+      Name: {{random.strDrink}}
+    </p>
   </div>
   <div class="card-body">
     <p class="card-text">
@@ -27,9 +27,8 @@
       Alcoholic: {{random.strAlcoholic}} 
     </p>
  </div>
- <button type="button" class="btn btn-primary" value="{{ random.idDrink }}" (click)="getCocktailById(random.idDrink)">GO TO {{random.strDrink}}¡¡¡</button>
- 
+ <button type="button" class="btn btn-primary" value="{{ random.idDrink }}" (click)="getCocktailById(random.idDrink)">
+  <i class="fa fa-upload fa-lg"></i>
+ </button>
 </div>
-
 </ng-container>
-          
