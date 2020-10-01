@@ -2,7 +2,7 @@
 <mat-toolbar>
    <div class="row">
      <div *ngIf="asyncDrink$ | async as drinks" class="col"> 
-      <button mat-button color="accent" value="{{drinks.idDrink}}" (click)="getCocktailById(drinks.idDrink)">
+      <button class="btn btn-primary"  value="{{drinks.idDrink}}" (click)="getCocktailById(drinks.idDrink)">
        <mat-icon>???</mat-icon>
       </button>
     </div>
@@ -11,27 +11,27 @@
     </div>
   </div>
 </mat-toolbar>
-            <div class="container">
-              <cdk-virtual-scroll-viewport itemSize="200" class="viewport">
-                <mat-card *cdkVirtualFor="let random of asyncRandom$ | async">
-                  <mat-card-header>
-                  </mat-card-header>
-                  <mat-card-title>Name: {{random.strDrink}}</mat-card-title>
-                  <mat-card-content >
-                    Category: {{random.strCategory}}
-                  <br>
-                   Alcoholic: {{random.strAlcoholic}}
-                  </mat-card-content>
-                  <mat-card-actions>
-                    <button type="button"  value="{{ random.idDrink }}" (click)="getCocktailById(random.idDrink)">GO¡¡¡</button>
-                  </mat-card-actions>
-                </mat-card>
-              </cdk-virtual-scroll-viewport>
-            </div>
-
-          
-
  
+<ng-container *ngFor="let random of asyncRandom$ | async" class="float-sm-left">
+<div>
 
+<div class="card">
+  <img class="card-img-top" src="{{ random.strDrinkThumb }}/preview" alt="Card image">
+  <div class="card-header">
+    Name: {{random.strDrink}}
+  </div>
+  <div class="card-body" >
+    <h5 class="card-title"></h5>
+    <p class="card-text">
+      Category: {{random.strCategory}}
+      <br>
+      Alcoholic: {{random.strAlcoholic}} 
+    </p>
+    <button type="button" class="btn btn-primary" value="{{ random.idDrink }}" (click)="getCocktailById(random.idDrink)">GO TO {{random.strDrink}}¡¡¡</button>
+ </div>
+</div>
 
+</div>
+</ng-container>
 
+            
