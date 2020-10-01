@@ -13,7 +13,7 @@
 </mat-toolbar>
  
 <ng-container *ngFor="let random of asyncRandom$ | async" class="float-sm-left">
-<div>
+
 
 <div class="card">
   <img class="card-img-top" src="{{ random.strDrinkThumb }}/preview" alt="Card image">
@@ -31,7 +31,5 @@
  </div>
 </div>
 
-</div>
 </ng-container>
-
-            
+          

@@ -1,20 +1,21 @@
 <div>
 <app-header></app-header>
 <div class="principal"> 
-<mat-card class="mat-card">
+
+<mat-card class="mat-card" *ngFor="let random of asyncDrink$ | async">
     <mat-card-header>
     </mat-card-header>
-    <img mat-card-image src="{{cocktail?.strDrinkThumb }}" class="mat-card-image">
+    <img mat-card-image src="{{random.strDrinkThumb }}" class="mat-card-image">
     <mat-card-content class="mat-card-content">
       <p class="p">
-        {{ cocktail?.strDrink }}
+        {{ random.strDrink }}
       </p>
         <br>
         <br>
         Ingredients : {{ ingredients }}
         <br>
         <br>
-        {{ cocktail?.strInstructions }}  
+        {{ random.strInstructions }}  
     </mat-card-content>
     <mat-card-actions>
      
