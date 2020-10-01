@@ -1,6 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import { Router } from "@angular/router";
-import { map, take, tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { CocktailService } from '../../../../services/cocktail.service'
 import { Drink } from '../../../../models/Drink'
 import { Observable } from 'rxjs';
