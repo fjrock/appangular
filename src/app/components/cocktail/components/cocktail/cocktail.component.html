@@ -1,9 +1,10 @@
 
+
 <mat-toolbar>
    <div class="row">
      <div *ngIf="asyncDrink$ | async as drinks" class="col"> 
       <button class="btn btn-primary"  value="{{drinks.idDrink}}" (click)="getCocktailById(drinks.idDrink)">
-       <mat-icon>???</mat-icon>
+       <i class="fa fa-beer fa-lg"></i>
       </button>
     </div>
     <div class="col">
