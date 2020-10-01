@@ -21,20 +21,7 @@ mat-toolbar {
   background-image: url('../../../../../assets/vasos.jpeg');
 }
 
-.ng-container{
-    margin: auto;
-    width: 60%;
-    border: 3px solid black;
-    padding: 10px;
-    display: flex;
-    align-self: center;
-    background-image: url('../../../../../assets/madera.jpg');
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
 
-}
 
 .card{
   display: block;
@@ -42,3 +29,4 @@ mat-toolbar {
   margin-right: auto;
   width: 40%;
 }
+
