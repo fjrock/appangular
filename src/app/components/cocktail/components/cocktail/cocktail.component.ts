@@ -40,6 +40,8 @@ export class CocktailComponent implements OnInit {
 
   }
 
+ 
+
   getCocktailById(id: any) {
     this.router.navigate([`detalle/${id}`]);
   }
