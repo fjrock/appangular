@@ -1,43 +1,52 @@
 
-<mat-toolbar>
-   <div class="row">
-     <div *ngIf="asyncDrink$ | async as drinks" class="col"> 
-      <button class="btn btn-primary"  value="{{drinks.idDrink}}" (click)="getCocktailById(drinks.idDrink)">
-       <i class="fa fa-random fa-lg"></i>
-      </button>
-    </div>
-    <div class="col">
-      <input matInput [(ngModel)]="searchLetter" (input)="getCocktailByLetterCocktail()" maxlength="1" style="width: 300px" class="mr5" type="text" placeholder="Buscar por letra inicial...">
-    </div>
-  </div>
-</mat-toolbar>
+ <div class="container-fluid">
 
 
-<br>
-<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
-    <li data-target="#carouselExampleCaptions"  *ngFor="let random of asyncRandom$ | async;let index = index" [attr.data-slide-to]="index"></li>
-  </ol>
-  <div class="carousel-inner">
-    <div class="carousel-item" *ngFor="let random of asyncRandom$ | async;let index = index;let isFirst = first" [ngClass]="{active:isFirst}">
-      <img [src]="random.strDrinkThumb" class="d-block w-100 h-50" >
-      <div class="carousel-caption d-none d-md-block">
-        <h5 [textContent]="random.strDrink"></h5>
-        <p [textContent]="random.strCategory"></p>
-        <p [textContent]="random.strAlcoholic"></p>
+      <mat-toolbar>
+        <div class="row">
+          <div *ngIf="asyncDrink$ | async as drinks" class="col"> 
+           <button class="btn btn-primary"  value="{{drinks.idDrink}}" (click)="getCocktailById(drinks.idDrink)">
+            <i class="fa fa-random fa-lg"></i>
+           </button>
+         </div>
+         <div class="col">
+           <input matInput [(ngModel)]="searchLetter" (input)="getCocktailByLetterCocktail()" maxlength="1" style="width: 150px" class="mr5" type="text" placeholder="Ingrese caracter...">
+         </div>
+       </div>
+     </mat-toolbar>
+     
+     
+     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+       
+       <ol class="carousel-indicators">
+         <li data-target="#carouselExampleCaptions"  *ngFor="let random of asyncRandom$ | async;let index = index" [attr.data-slide-to]="index"></li>
+       </ol>
 
-        <button type="button" class="btn btn-primary" value="{{ random.idDrink }}" (click)="getCocktailById(random.idDrink)">
-          <i class="fa fa-upload fa-lg"></i>
-         </button>
-      </div>
+       <div class="carousel-inner">
+         <div class="carousel-item" *ngFor="let random of asyncRandom$ | async;let index = index;let isFirst = first" [ngClass]="{active:isFirst}">
+           <img class='img-fluid'  [src]="random.strDrinkThumb" >
+           <div class="carousel-caption d-md-block">
+             <h6 class="badge badge-dark">Name : {{random.strDrink}}</h6>
+             <br>
+             <h6  class="badge badge-dark">Category : {{random.strCategory}}</h6>
+             <br>
+             <h6  class="badge badge-dark">Clasification : {{random.strAlcoholic}}</h6>
+             <br>
+             <button type="button" class="badge badge-pill badge-primary" value="{{ random.idDrink }}" (click)="getCocktailById(random.idDrink)">
+              <i class="fa fa-upload fa-lg"></i>
+             </button>
+           </div>
+         </div>
+       </div>
+       <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+         <span class="sr-only">Previous</span>
+       </a>
+       <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+         <span class="sr-only">Next</span>
+       </a>
+     </div>
+    
+    
     </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
