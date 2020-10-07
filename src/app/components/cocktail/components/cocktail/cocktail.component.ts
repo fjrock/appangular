@@ -5,8 +5,6 @@ import { CocktailService } from '../../../../services/cocktail.service'
 import { Drink } from '../../../../models/Drink'
 import { Observable } from 'rxjs';
 
-
-
 @Component({
   selector: 'app-cocktail',
   templateUrl: './cocktail.component.html',
@@ -20,14 +18,9 @@ export class CocktailComponent implements OnInit{
   random: String
   asyncDrink$: Observable<Drink>;
   asyncRandom$: Observable<any>;
-  selectedLetter:string;
-  myArray: any[] = []
-
-  articles$: Observable<any[]>;
-
 
   constructor(private router: Router,
-              private cocktailService: CocktailService) {  }
+              private cocktailService: CocktailService) { }
 
   ngOnInit() {
 
@@ -38,27 +31,20 @@ export class CocktailComponent implements OnInit{
       map (response => response.drinks[0])
     );
 
-
-    
     this.random = String.fromCharCode(65+Math.floor(Math.random() * 26))
     this.getCocktailByLetterCocktailInit(this.random);
 
   }
 
-  
-
   getCocktailById(id: any) {
-    
-    this.selectedLetter = this.searchLetter;
+  
     this.router.navigate([`detalle/${id}`]);
 
   }
 
   getCocktailByLetterCocktail(){
-
+    
     if(this.searchLetter!=''){
-
-      
       this.asyncRandom$ = this.cocktailService.findByLetter(this.searchLetter).pipe(tap(response => {
         this.cocktailLetter = response.drinks
       }),
@@ -69,13 +55,12 @@ export class CocktailComponent implements OnInit{
   }
   
   getCocktailByLetterCocktailInit(random: String){
-
-    this.asyncRandom$ = this.cocktailService.findByLetter(this.random).pipe(tap(response => {
+    
+    this.asyncRandom$ = this.cocktailService.findByLetter(random).pipe(tap(response => {
       this.cocktailLetter = response.drinks
     }),
     map (response => response.drinks)
-   );
-      
+   ); 
   }
 
 }

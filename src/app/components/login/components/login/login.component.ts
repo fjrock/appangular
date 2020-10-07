@@ -30,7 +30,7 @@ import { Router } from '@angular/router';
             this.router.navigate(['/admin']);
         })
         .catch(error => {
-            this.router.navigate(['/home']);
+            
         });
       }
     }

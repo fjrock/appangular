@@ -5,8 +5,6 @@ import { map, tap } from 'rxjs/operators';
 import { Drink } from '../../../../models/Drink';
 import { Observable } from 'rxjs';
 
-
-
 @Component({
   selector: 'app-cocktail-detalle',
   templateUrl: './cocktail-detalle-random.component.html',
@@ -20,21 +18,15 @@ export class CocktailDetalleRandomComponent implements OnInit{
   cocktail: Drink
   ingredients: String
   asyncDrink$: Observable<Drink>;
-  selectedLetter :any;
-  searchLetter :any;
- 
 
   ngOnInit() {
     
     let id: string = this.route.snapshot.paramMap.get("id");
     this.getCocktailById(id);
-    console.log(this.selectedLetter);
 
   }
 
- 
-
-  public getCocktailById(id: any){
+    getCocktailById(id: any){
 
     this.asyncDrink$ = this.cocktailService.findDetailCocktail(id).pipe(
       tap(response => {
@@ -95,10 +87,7 @@ export class CocktailDetalleRandomComponent implements OnInit{
       if(concatenar.strIngredient15!=null){
         this.ingredients=this.ingredients+', '+concatenar[0].strIngredient15;
       }
-      
-      
-      return this.ingredients;
-      
+        return this.ingredients;
       }
 
 }
