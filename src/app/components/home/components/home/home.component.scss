@@ -1,5 +1,16 @@
-.principal {
+
+  .bg {
     background-image: url('../../../../../assets/madera.jpg');
+    height: 800px; 
+    background-position: center;
+    background-repeat: no-repeat;
     background-size: cover;
-    height: 800px;
+   
+
   }
+
+  .card-body, .card-footer, .card-header{
+  background-color: black;
+}
+
+

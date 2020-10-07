@@ -1,9 +1,18 @@
 
+ .bg {
+  background-image: url('../../../../../assets/madera.jpg');
+  height: 800px; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+ 
 
+}
 
 .vasos {
   height: 150px;
   background-image: url('../../../../../assets/vasos.jpeg');
+  
 }
 
 .carousel {
