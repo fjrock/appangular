@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PageNotFoundComponent } from '../../shared/page-not-found/page-not-found/page-not-found.component'
-import { ArtistComponent } from './components/artist/artist.component';
+import { PageNotFoundComponent} from '../../shared/page-not-found/page-not-found/page-not-found.component'
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: ArtistComponent
+    component: LoginComponent
   },
   {
     path: '**',
     component:PageNotFoundComponent
     
-  } 
+  }  
 
 ];
 
@@ -20,4 +20,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class MusicRoutingModule { }
+export class LoginRoutingModule { }

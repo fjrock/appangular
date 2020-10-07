@@ -22,9 +22,13 @@ const routes: Routes = [
         loadChildren: () => import('./components/cocktail/cocktail.module').then(m => m.CocktailModule)
       },
       {
-        path: 'music',
-        loadChildren: () => import('./components/music/music.module').then(m => m.MusicModule)
-      }    
+        path: 'login',
+        loadChildren: () => import('./components/login/login.module').then(m => m.LoginModule)
+      },
+      {
+        path: 'admin',
+        loadChildren: () => import('./components/admin/admin.module').then(m => m.AdminModule)
+      }
     ]
   }
 ];

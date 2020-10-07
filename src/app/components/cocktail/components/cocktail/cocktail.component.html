@@ -1,7 +1,5 @@
 
  <div class="container-fluid">
-
-
       <mat-toolbar>
         <div class="row">
           <div *ngIf="asyncDrink$ | async as drinks" class="col"> 
@@ -9,12 +7,12 @@
             <i class="fa fa-random fa-lg"></i>
            </button>
          </div>
+         <br>
          <div class="col">
            <input matInput [(ngModel)]="searchLetter" (input)="getCocktailByLetterCocktail()" maxlength="1" style="width: 150px" class="mr5" type="text" placeholder="Ingrese caracter...">
          </div>
        </div>
      </mat-toolbar>
-     
      
      <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
        

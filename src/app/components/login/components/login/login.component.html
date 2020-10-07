@@ -1,0 +1,23 @@
+
+      
+       <form [formGroup]="form" class="card"  (ngSubmit)="login(form.value)">
+        
+        <div class="card">
+
+            <div class="row">
+              <div class="col-xs">
+                <input formControlName="email" type="text" aria-label="First name" class="form-control" placeholder="Ingrese email...">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs">
+                <input formControlName="password" type="password" aria-label="First name" class="form-control" placeholder="Ingrese password...">
+              </div>
+            </div>
+    
+
+            <button [disabled]="form.invalid" class="btn btn-outline-secondary" type="submit">Ingresar</button>
+        </div>
+
+    </form>
+    

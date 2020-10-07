@@ -8,8 +8,13 @@ import { SharedModule } from './shared/shared.module';
 import { LayoutComponent } from './components/layout/layout.component';
 import { CocktailModule} from './components/cocktail/cocktail.module';
 import { MaterialModule } from './components/material/material.module';
-import { MusicModule } from './components/music/music.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularFireModule } from "@angular/fire";
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { environment} from '../environments/environment'
+import { AngularFirestore } from '@angular/fire/firestore';
+import { LoginModule } from './components/login/login.module';
+import { AdminModule } from './components/admin/admin.module';
 
 
 
@@ -25,12 +30,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     SharedModule,
     CocktailModule,
-    MusicModule,
+    LoginModule,
+    AdminModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
+    
 
   ],
-  providers: [],
+  providers: [AngularFirestore],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

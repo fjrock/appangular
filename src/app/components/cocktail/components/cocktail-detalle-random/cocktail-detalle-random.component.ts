@@ -5,12 +5,14 @@ import { map, tap } from 'rxjs/operators';
 import { Drink } from '../../../../models/Drink';
 import { Observable } from 'rxjs';
 
+
+
 @Component({
   selector: 'app-cocktail-detalle',
   templateUrl: './cocktail-detalle-random.component.html',
   styleUrls: ['./cocktail-detalle-random.component.scss']
 })
-export class CocktailDetalleRandomComponent implements OnInit {
+export class CocktailDetalleRandomComponent implements OnInit{
 
   constructor(private route: ActivatedRoute,
               private cocktailService: CocktailService) { }
@@ -18,11 +20,19 @@ export class CocktailDetalleRandomComponent implements OnInit {
   cocktail: Drink
   ingredients: String
   asyncDrink$: Observable<Drink>;
+  selectedLetter :any;
+  searchLetter :any;
+ 
 
   ngOnInit() {
+    
     let id: string = this.route.snapshot.paramMap.get("id");
     this.getCocktailById(id);
+    console.log(this.selectedLetter);
+
   }
+
+ 
 
   public getCocktailById(id: any){
 
@@ -34,14 +44,12 @@ export class CocktailDetalleRandomComponent implements OnInit {
       map (response => response.drinks)
     );
 
-
     }
 
     concatenar(concatenar:any){
+
       this.ingredients='';
 
-      
-      
       if(concatenar[0].strIngredient1!=null  ){
         this.ingredients=this.ingredients+concatenar[0].strIngredient1;
       }

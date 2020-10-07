@@ -3,20 +3,22 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MaterialModule } from '../material/material.module';
-import { MusicRoutingModule } from './music-routing.module';
-import { ArtistComponent } from './components/artist/artist.component';
+import { LoginComponent } from './components/login/login.component';
+import { LoginRoutingModule } from './login-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
-    ArtistComponent
+    LoginComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
+    LoginRoutingModule,
     FormsModule,
     MaterialModule,
-    MusicRoutingModule
+    ReactiveFormsModule
   ]
 })
-export class MusicModule { }
+export class LoginModule { }
