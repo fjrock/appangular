@@ -9,9 +9,6 @@ import {Observable } from 'rxjs';
 })
 export class CocktailService {
 
-//searchData = new BehaviorSubject<string>('');
-//observableSearchData$ = this.searchData.asObservable();
-
 constructor(private http: HttpClient) { }
  
 public getRandom():Observable<any>{
@@ -25,11 +22,5 @@ public findDetailCocktail(id: any): Observable<any>{
 public findByLetter(letter: any): Observable<any> {
   return this.http.get<any>(`${environment.API_COCKTAIL}/search.php?f=${letter}`);
 }
-
-/*nextData(data: any) {
-  console.log(data)
-  this.searchData.next(data);
-}*/
-
 
 }
