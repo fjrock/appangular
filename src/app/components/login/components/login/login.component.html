@@ -1,5 +1,6 @@
 
-      
+    <div class="principal"> 
+
        <form [formGroup]="form" class="card"  (ngSubmit)="login(form.value)">
         
         <div class="card">
@@ -15,9 +16,10 @@
               </div>
             </div>
     
-
-            <button [disabled]="form.invalid" class="btn btn-outline-secondary" type="submit">Ingresar</button>
+            
+            <button [disabled]="form.invalid" class="btn btn-primary" type="submit">Ingresar</button>
         </div>
 
     </form>
+  </div>  
     

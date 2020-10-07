@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit} from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { User } from 'src/app/models/User';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,7 +14,7 @@ import { Router } from '@angular/router';
 
     constructor(private formBuilder: FormBuilder, 
                 private router: Router,
-                private loginService:LoginService) 
+                private loginService: LoginService) 
     {
       this.createForm();
     }
@@ -37,11 +36,8 @@ import { Router } from '@angular/router';
     }
   
     private createForm(): void {
-
       this.form = this.formBuilder.group({
-        email: ['', Validators.compose([
-          Validators.required, Validators.email])
-        ],
+        email: ['', Validators.compose([Validators.required, Validators.email])],
         password: ['', [Validators.required]],
       });
     }
