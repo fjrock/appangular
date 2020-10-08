@@ -2,8 +2,6 @@ import { Component, OnDestroy, OnInit} from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-
 
 @Component({
     selector: 'app-login',
@@ -22,15 +20,10 @@ import { Observable } from 'rxjs';
                 ) 
     {
       this.createForm();
-
-     
     }
   
     ngOnInit() {
-    
       this.error=false;
-     
-      
     }
   
     login(form: any) {
