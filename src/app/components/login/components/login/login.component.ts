@@ -2,7 +2,8 @@ import { Component, OnDestroy, OnInit} from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { MatSnackBar } from '@angular/material';
+import { Observable } from 'rxjs';
+
 
 @Component({
     selector: 'app-login',
@@ -12,11 +13,13 @@ import { MatSnackBar } from '@angular/material';
   export class LoginComponent implements OnInit {
 
     form: FormGroup;
+    error = false;
+    mensajeError: any;
 
     constructor(private formBuilder: FormBuilder, 
                 private router: Router,
-                private loginService: LoginService,
-                private snackBar: MatSnackBar) 
+                private loginService: LoginService
+                ) 
     {
       this.createForm();
 
@@ -24,24 +27,32 @@ import { MatSnackBar } from '@angular/material';
     }
   
     ngOnInit() {
-
+    
+      this.error=false;
+     
       
     }
   
     login(form: any) {
 
       if (this.form.valid) {
+
         this.loginService.login(form)
         .then(res => {
+
             this.router.navigate(['/admin']);
+
         })
-        .catch(error => {
+        .catch(err => {
+
+          this.mensajeError = err;
+          this.error = true;
           this.createForm();
-          
+
         });
       }
     }
-  
+
     private createForm(): void {
       this.form = this.formBuilder.group({
         email: ['', Validators.compose([Validators.required, Validators.email])],

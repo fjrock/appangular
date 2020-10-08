@@ -15,11 +15,21 @@
                 <input formControlName="password" type="password" aria-label="First name" class="form-control" placeholder="Ingrese password...">
               </div>
             </div>
+            
     
             
             <button [disabled]="form.invalid" class="btn btn-primary" type="submit">Ingresar</button>
         </div>
 
     </form>
+
+    <div  *ngIf="error"> 
+      <div class="col-xs">
+        <div class="alert alert-danger" role="alert">
+         {{mensajeError}}
+        </div>
+      </div>
+    </div>
+    
   </div>  
     
