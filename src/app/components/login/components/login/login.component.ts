@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit} from '@angular/core';
 import { LoginService } from 'src/app/services/login.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
     selector: 'app-login',
@@ -14,12 +15,17 @@ import { Router } from '@angular/router';
 
     constructor(private formBuilder: FormBuilder, 
                 private router: Router,
-                private loginService: LoginService) 
+                private loginService: LoginService,
+                private snackBar: MatSnackBar) 
     {
       this.createForm();
+
+     
     }
   
     ngOnInit() {
+
+      
     }
   
     login(form: any) {
@@ -30,7 +36,8 @@ import { Router } from '@angular/router';
             this.router.navigate(['/admin']);
         })
         .catch(error => {
-            
+          this.createForm();
+          
         });
       }
     }
