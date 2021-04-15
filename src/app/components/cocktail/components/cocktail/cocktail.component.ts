@@ -2,7 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import { Router } from "@angular/router";
 import { map, tap } from 'rxjs/operators';
 import { CocktailService } from '../../../../services/cocktail.service'
-import { Drink } from '../../../../models/Drink'
+import { Drink } from '../../../../models/drink'
 import { Observable } from 'rxjs';
 
 @Component({
