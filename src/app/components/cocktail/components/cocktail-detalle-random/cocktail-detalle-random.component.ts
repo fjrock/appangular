@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CocktailService } from '../../../../services/cocktail.service'
 import { map, tap } from 'rxjs/operators';
-import { Drink } from '../../../../models/Drink';
+import { Drink } from '../../../../models/drink';
 import { Observable } from 'rxjs';
 
 @Component({
