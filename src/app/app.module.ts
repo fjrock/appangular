@@ -15,7 +15,8 @@ import { environment} from '../environments/environment'
 import { AngularFirestore } from '@angular/fire/firestore';
 import { LoginModule } from './components/login/login.module';
 import { AdminModule } from './components/admin/admin.module';
-
+import {  HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HeaderInterceptorService } from './interceptors/header-interceptor.service';
 
 
 @NgModule({
@@ -39,7 +40,10 @@ import { AdminModule } from './components/admin/admin.module';
     
 
   ],
-  providers: [AngularFirestore],
+  providers: [AngularFirestore,
+    {provide: HTTP_INTERCEPTORS,
+      useClass: HeaderInterceptorService,
+      multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
