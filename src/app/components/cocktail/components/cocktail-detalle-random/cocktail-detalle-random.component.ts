@@ -43,49 +43,49 @@ export class CocktailDetalleRandomComponent implements OnInit{
       this.ingredients='';
 
       if(concatenar[0].strIngredient1!=null && concatenar[0].strIngredient1.trim()!=""){
-        this.ingredients=this.ingredients+concatenar[0].strIngredient1+`(${concatenar[0].strMeasure1})`;
+        this.ingredients=this.ingredients+concatenar[0].strIngredient1+`${concatenar[0].strMeasure1==null?``:`(`+concatenar[0].strMeasure1 +`)`}`;
       }
       if(concatenar[0].strIngredient2!=null && concatenar[0].strIngredient2.trim()!=""){
-        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient2+`(${concatenar[0].strMeasure2})`;
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient2+`${concatenar[0].strMeasure2==null?``:`(`+concatenar[0].strMeasure2 +`)`}`;
       }
       if(concatenar[0].strIngredient3!=null && concatenar[0].strIngredient3.trim()!=""){
-        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient3+`(${concatenar[0].strMeasure3})`;
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient3+`${concatenar[0].strMeasure3==null?``:`(`+concatenar[0].strMeasure3 +`)`}`;
       }
       if(concatenar[0].strIngredient4!=null && concatenar[0].strIngredient4.trim()!=""){
-        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient4+`(${concatenar[0].strMeasure4})`;
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient4+`${concatenar[0].strMeasure4==null?``:`(`+concatenar[0].strMeasure4 +`)`}`;
       }
       if(concatenar[0].strIngredient5!=null && concatenar[0].strIngredient5.trim()!=""){
-        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient5+`(${concatenar[0].strMeasure5})`;
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient5+`${concatenar[0].strMeasure5==null?``:`(`+concatenar[0].strMeasure5 +`)`}`;
       }
       if(concatenar[0].strIngredient6!=null && concatenar[0].strIngredient6.trim()!=""){
-        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient6+`(${concatenar[0].strMeasure6})`;
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient6+`${concatenar[0].strMeasure6==null?``:`(`+concatenar[0].strMeasure6 +`)`}`;
       }
       if(concatenar[0].strIngredient7!=null && concatenar[0].strIngredient7.trim()!=""){
-        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient7+`(${concatenar[0].strMeasure7})`;
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient7+`${concatenar[0].strMeasure7==null?``:`(`+concatenar[0].strMeasure7 +`)`}`;
       }
       if(concatenar[0].strIngredient8!=null && concatenar[0].strIngredient8.trim()!=""){
-        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient8+`(${concatenar[0].strMeasure8})`;
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient8+`${concatenar[0].strMeasure8==null?``:`(`+concatenar[0].strMeasure8 +`)`}`;
       }
       if(concatenar[0].strIngredient9!=null && concatenar[0].strIngredient9.trim()!=""){
-        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient9+`(${concatenar[0].strMeasure9})`;
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient9+`${concatenar[0].strMeasure9==null?``:`(`+concatenar[0].strMeasure9 +`)`}`;
       }
       if(concatenar[0].strIngredient10!=null && concatenar[0].strIngredient10.trim()!=""){
-        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient10+`(${concatenar[0].strMeasure10})`;
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient10+`${concatenar[0].strMeasure10==null?``:`(`+concatenar[0].strMeasure10 +`)`}`;
       }
       if(concatenar[0].strIngredient11!=null && concatenar[0].strIngredient11.trim()!=""){
-        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient11+`(${concatenar[0].strMeasure11})`;
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient11+`${concatenar[0].strMeasure11==null?``:`(`+concatenar[0].strMeasure11 +`)`}`;
       }
       if(concatenar[0].strIngredient12!=null && concatenar[0].strIngredient12.trim()!=""){
-        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient12+`(${concatenar[0].strMeasure12})`;
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient12+`${concatenar[0].strMeasure12==null?``:`(`+concatenar[0].strMeasure12 +`)`}`;
       }
       if(concatenar[0].strIngredient13!=null && concatenar[0].strIngredient13.trim()!=""){
-        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient13+`(${concatenar[0].strMeasure13})`;
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient13+`${concatenar[0].strMeasure13==null?``:`(`+concatenar[0].strMeasure13 +`)`}`;
       }
       if(concatenar[0].strIngredient14!=null && concatenar[0].strIngredient14.trim()!=""){
-        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient14+`(${concatenar[0].strMeasure14})`;
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient14+`${concatenar[0].strMeasure14==null?``:`(`+concatenar[0].strMeasure14 +`)`}`;
       }
       if(concatenar.strIngredient15!=null && concatenar[0].strIngredient15.trim()!=""){
-        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient15+`(${concatenar[0].strMeasure15})`;
+        this.ingredients=this.ingredients+', '+concatenar[0].strIngredient15+`${concatenar[0].strMeasure15==null?``:`(`+concatenar[0].strMeasure15 +`)`}`;
       }
         return this.ingredients;
       }
